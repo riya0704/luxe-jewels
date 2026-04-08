@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Calendar, Clock, MapPin, User, Phone, Mail, CheckCircle2, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Clock, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import { staggerContainerVariants, fadeUpVariants } from "@/lib/hooks/useScrollReveal";
 
 const services = [
@@ -168,10 +169,11 @@ export default function AppointmentBookingPage() {
                 <h2 className="font-serif text-2xl text-ivory mb-8">Select Date & Time</h2>
                 <div className="space-y-6 mb-8">
                   <div>
-                    <label className="block font-sans text-xs tracking-[0.15em] uppercase text-gold/70 mb-3">
+                    <label htmlFor="appointment-date" className="block font-sans text-xs tracking-[0.15em] uppercase text-gold/70 mb-3">
                       Preferred Date
                     </label>
                     <input
+                      id="appointment-date"
                       type="date"
                       value={selectedDate}
                       onChange={(e) => setSelectedDate(e.target.value)}
@@ -330,7 +332,7 @@ export default function AppointmentBookingPage() {
             <div>
               <h2 className="font-serif text-4xl text-ivory mb-4">Appointment Confirmed</h2>
               <p className="font-sans text-lg text-ivory/60 max-w-2xl mx-auto">
-                Thank you for booking your consultation. We've sent a confirmation email to {formData.email}.
+                Thank you for booking your consultation. We&apos;ve sent a confirmation email to {formData.email}.
               </p>
             </div>
 
@@ -356,18 +358,18 @@ export default function AppointmentBookingPage() {
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <a
+              <Link
                 href="/"
                 className="px-8 py-4 rounded-full bg-gold-gradient font-sans text-xs tracking-[0.2em] uppercase text-obsidian font-semibold hover:opacity-90 transition-opacity"
               >
                 Back to Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/shop"
                 className="px-8 py-4 rounded-full border border-gold/30 font-sans text-xs tracking-[0.2em] uppercase text-gold hover:bg-gold/10 transition-colors"
               >
                 Continue Shopping
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

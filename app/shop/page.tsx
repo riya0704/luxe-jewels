@@ -245,6 +245,7 @@ export default function ShopPage() {
                   </p>
                   <input
                     type="range"
+                    aria-label="Maximum price"
                     min={0}
                     max={30000}
                     step={500}

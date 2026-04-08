@@ -16,6 +16,9 @@ const steps = ["Shipping", "Payment", "Review"];
 export default function CheckoutPage() {
   const [step, setStep] = useState(0);
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [orderNumber] = useState(
+    () => `LX-${Math.random().toString(36).slice(2, 8).toUpperCase()}`
+  );
   const [summaryOpen, setSummaryOpen] = useState(false);
   const { items, total, clearCart } = useCartStore();
   const cartTotal = total();
@@ -78,7 +81,7 @@ export default function CheckoutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            Thank you for your order. You'll receive a confirmation email shortly.
+            Thank you for your order. You&apos;ll receive a confirmation email shortly.
           </motion.p>
           <motion.p
             className="font-sans text-sm text-gold/70 mb-10"
@@ -86,7 +89,7 @@ export default function CheckoutPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Order #LX-{Math.random().toString(36).slice(2, 8).toUpperCase()}
+            Order #{orderNumber}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

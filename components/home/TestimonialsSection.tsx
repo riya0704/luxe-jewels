@@ -89,7 +89,7 @@ export function TestimonialsSection() {
           scale: quoteScale,
         }}
       >
-        "
+        &ldquo;
       </motion.div>
 
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
@@ -155,7 +155,7 @@ export function TestimonialsSection() {
               </motion.div>
 
               <p className="font-serif text-xl text-ivory/80 leading-relaxed mb-8 italic">
-                "{t.text}"
+                &ldquo;{t.text}&rdquo;
               </p>
 
               <div className="flex items-center gap-4 relative z-10">

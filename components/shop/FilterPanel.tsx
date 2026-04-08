@@ -59,6 +59,7 @@ export function FilterPanel({
                 <h3 className="font-serif text-xl text-ivory">Filters</h3>
                 <button
                   onClick={onClose}
+                  aria-label="Close filters"
                   className="p-2 hover:bg-gold/10 rounded-lg transition-colors"
                 >
                   <X size={20} className="text-ivory/60" />
@@ -134,6 +135,7 @@ export function FilterPanel({
                   <div className="space-y-3">
                     <input
                       type="range"
+                      aria-label="Maximum price"
                       min={0}
                       max={30000}
                       step={500}
@@ -148,6 +150,7 @@ export function FilterPanel({
                     />
                     <input
                       type="range"
+                      aria-label="Minimum price"
                       min={0}
                       max={30000}
                       step={500}

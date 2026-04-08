@@ -13,13 +13,8 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [hydrated, setHydrated] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const { itemCount } = useCartStore();
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -110,7 +105,7 @@ export function Navbar() {
               </Link>
               <Link href="/cart" className="relative text-ivory/60 hover:text-gold transition-colors duration-300" aria-label="Cart">
                 <ShoppingBag size={18} />
-                {hydrated && itemCount() > 0 && (
+                {itemCount() > 0 && (
                   <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-gold text-obsidian text-[9px] font-sans font-semibold flex items-center justify-center">
                     {itemCount()}
                   </span>
@@ -220,7 +215,7 @@ export function Navbar() {
           >
             <div className="flex items-center justify-between px-6 h-20 border-b border-gold/10">
               <span className="font-serif text-2xl tracking-[0.4em] text-gold-light">LUXE</span>
-              <button onClick={() => setMobileOpen(false)} className="text-ivory/60 hover:text-gold transition-colors">
+              <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="text-ivory/60 hover:text-gold transition-colors">
                 <X size={22} />
               </button>
             </div>

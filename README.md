@@ -1,37 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# LUXE Jewels
 
-First, run the development server:
+Production-grade Next.js storefront for luxury jewellery.
+
+## Tech Stack
+
+- Next.js App Router (TypeScript)
+- Tailwind CSS v4
+- Framer Motion + GSAP
+- Zustand (cart/wishlist state)
+
+## Local Development
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Production Build
 
-## Learn More
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set the following in your deployment environment:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `NEXT_PUBLIC_SITE_URL`: Public site URL used for canonical metadata and sitemap generation.
 
-## Deploy on Vercel
+Example:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# luxe-jewels
+## Production Readiness Included
+
+- Security headers in Next config.
+- Strict mode enabled.
+- Dynamic `robots.txt` and `sitemap.xml`.
+- Web app manifest.
+- App-level and global error boundaries.
+- Optimized image formats and remote image allowlist.
+
+## Deployment
+
+Deploy on Vercel (recommended) or any Node-compatible platform:
+
+1. Set environment variables.
+2. Build with `npm run build`.
+3. Start with `npm run start`.
+
+For Vercel, import the repository and add `NEXT_PUBLIC_SITE_URL` in Project Settings.

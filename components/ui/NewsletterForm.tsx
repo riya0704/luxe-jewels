@@ -59,7 +59,7 @@ export function NewsletterForm({
       if (showSuccessMessage) {
         setTimeout(() => setSubmitted(false), 3000);
       }
-    } catch (err) {
+    } catch {
       setLoading(false);
       setError("Something went wrong. Please try again.");
     }
@@ -103,7 +103,7 @@ export function NewsletterForm({
       >
         <p className="font-serif text-lg text-gold-light mb-1">Welcome to the Circle</p>
         <p className="font-sans text-sm text-ivory/50">
-          You'll be the first to know about our next collection.
+          You&apos;ll be the first to know about our next collection.
         </p>
       </motion.div>
     );

@@ -43,7 +43,7 @@ export default function ContactPage() {
             transition={{ duration: 0.9 }}
           >
             <p className="font-sans text-base text-ivory/50 leading-relaxed mb-12">
-              Whether you have a question about a piece, want to discuss a custom commission, or simply wish to visit our atelier — we'd love to hear from you.
+              Whether you have a question about a piece, want to discuss a custom commission, or simply wish to visit our atelier — we&apos;d love to hear from you.
             </p>
 
             <div className="space-y-8">
@@ -125,7 +125,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="font-serif text-3xl text-ivory mb-4">Message Received</h3>
                 <p className="font-sans text-sm text-ivory/50">
-                  Thank you for reaching out. We'll respond within 24 hours.
+                  Thank you for reaching out. We&apos;ll respond within 24 hours.
                 </p>
               </motion.div>
             )}

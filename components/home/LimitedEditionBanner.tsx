@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import gsap from "gsap";
 import { createMagneticButton } from "@/lib/animations/premium";
 
 /**
@@ -95,7 +94,7 @@ export function LimitedEditionBanner() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Each piece is individually numbered, hallmarked, and accompanied by a certificate of authenticity. Once they're gone, they're gone forever.
+            Each piece is individually numbered, hallmarked, and accompanied by a certificate of authenticity. Once they&apos;re gone, they&apos;re gone forever.
           </motion.p>
 
           <motion.div

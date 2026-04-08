@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/Footer";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { Providers } from "./providers";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://luxe-jewels.vercel.app";
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -23,6 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "LUXE — Fine Jewellery",
     template: "%s | LUXE Fine Jewellery",
@@ -30,10 +33,31 @@ export const metadata: Metadata = {
   description:
     "Discover handcrafted luxury jewellery — rings, necklaces, bracelets, earrings, and limited-edition collections. Timeless elegance, modern artistry.",
   keywords: ["luxury jewellery", "fine jewellery", "gold rings", "diamond necklaces", "handcrafted"],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "LUXE Fine Jewellery",
+    title: "LUXE — Fine Jewellery",
+    description:
+      "Discover handcrafted luxury jewellery — rings, necklaces, bracelets, earrings, and limited-edition collections.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LUXE — Fine Jewellery",
+    description:
+      "Discover handcrafted luxury jewellery — rings, necklaces, bracelets, earrings, and limited-edition collections.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
 };
 

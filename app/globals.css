@@ -69,15 +69,15 @@
   /* Glassmorphism */
   .glass {
     background: rgba(20, 20, 20, 0.6);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(201, 168, 76, 0.1);
   }
 
   .glass-light {
     background: rgba(30, 30, 30, 0.4);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
@@ -454,6 +454,7 @@
 /* Premium dropdown menu */
 .premium-dropdown {
   background: rgba(15, 15, 15, 0.95);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(201, 168, 76, 0.15);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
@@ -491,8 +492,8 @@
 /* Glass premium with enhanced blur */
 .glass-premium {
   background: rgba(15, 15, 15, 0.4);
-  backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
   border: 1px solid rgba(201, 168, 76, 0.15);
 }
 

@@ -684,10 +684,9 @@ export const createLineTracing = (svgElement: SVGElement, duration = 2) => {
   const paths = svgElement.querySelectorAll("path, line, rect");
   paths.forEach((path) => {
     if (path instanceof SVGElement) {
-      const length =
-        path instanceof SVGPathElement
-          ? path.getTotalLength()
-          : (path as any).getTotalLength?.() || 0;
+      const geometryPath =
+        path instanceof SVGGeometryElement ? path : null;
+      const length = geometryPath ? geometryPath.getTotalLength() : 0;
 
       if (length > 0) {
         path.style.strokeDasharray = `${length}`;
