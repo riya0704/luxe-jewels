@@ -10,6 +10,36 @@
 				"build"
 			],
 			"isBackground": false
+		},
+		{
+			"label": "lint-luxe-jewels",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"lint"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "lint-luxe-jewels",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"lint"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "lint-luxe-jewels",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"lint"
+			],
+			"isBackground": false
 		}
 	]
 }

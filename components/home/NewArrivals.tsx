@@ -174,7 +174,6 @@ export function NewArrivals() {
                 onAddToCart={() => addItem(product)}
                 onWishlist={() => toggle(product)}
                 isWishlisted={isWishlisted(product.id)}
-                index={index}
               />
             </motion.div>
           ))}
@@ -189,7 +188,6 @@ type ProductCardProps = {
   onAddToCart: () => void;
   onWishlist: () => void;
   isWishlisted: boolean;
-  index?: number;
 };
 
 export const ProductCard = memo(function ProductCard({
@@ -197,7 +195,6 @@ export const ProductCard = memo(function ProductCard({
   onAddToCart,
   onWishlist,
   isWishlisted,
-  index = 0,
 }: ProductCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -247,7 +244,9 @@ export const ProductCard = memo(function ProductCard({
   // Shine animation on hover
   useEffect(() => {
     const shine = shineRef.current;
+    const card = cardRef.current;
     if (!shine) return;
+    if (!card) return;
 
     const handleMouseEnter = () => {
       gsap.fromTo(
@@ -261,10 +260,10 @@ export const ProductCard = memo(function ProductCard({
       );
     };
 
-    cardRef.current?.addEventListener("mouseenter", handleMouseEnter);
+    card.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
-      cardRef.current?.removeEventListener("mouseenter", handleMouseEnter);
+      card.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, []);
 

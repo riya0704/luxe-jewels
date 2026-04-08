@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { collections, products } from "@/lib/data/products";
 
@@ -65,9 +66,12 @@ export default async function CollectionDetailPage({
   return (
     <div className="min-h-screen bg-obsidian pt-20">
       <section className="relative h-[48vh] min-h-[360px] overflow-hidden border-b border-gold/10">
-        <img
+        <Image
           src={collection.image}
           alt={collection.name}
+          fill
+          priority
+          sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-obsidian/30 to-obsidian" />
@@ -116,9 +120,11 @@ export default async function CollectionDetailPage({
               <Link key={product.id} href={`/product/${product.id}`} className="group block">
                 <article className="glass border border-gold/10 rounded-2xl overflow-hidden h-full hover:border-gold/30 transition-all">
                   <div className="relative aspect-[3/4] overflow-hidden">
-                    <img
+                    <Image
                       src={product.images[0]}
                       alt={product.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 to-transparent" />

@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -122,14 +123,16 @@ export default function CartPage() {
                     {/* Image */}
                     <Link href={`/product/${item.product.id}`} className="shrink-0">
                       <motion.div
-                        className="w-24 h-24 rounded-xl overflow-hidden bg-charcoal-light"
+                        className="relative w-24 h-24 rounded-xl overflow-hidden bg-charcoal-light"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <img
+                        <Image
                           src={item.product.images[0]}
                           alt={item.product.name}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                          fill
+                          sizes="96px"
+                          className="object-cover hover:scale-110 transition-transform duration-500"
                         />
                       </motion.div>
                     </Link>

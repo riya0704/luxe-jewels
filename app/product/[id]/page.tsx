@@ -2,6 +2,7 @@
 
 import { use, useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Heart, ShoppingBag, Star, ChevronDown, Share2, Ruler } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -150,7 +151,13 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                       selectedImage === i ? "ring-1 ring-gold shadow-md shadow-gold/20" : "opacity-50 hover:opacity-80"
                     }`}
                   >
-                    <img src={img} alt={`View ${i + 1}`} className="w-full h-full object-cover" />
+                    <Image
+                      src={img}
+                      alt={`View ${i + 1}`}
+                      fill
+                      sizes="80px"
+                      className="w-full h-full object-cover"
+                    />
                   </motion.button>
                 ))}
               </div>

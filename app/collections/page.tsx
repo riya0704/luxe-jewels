@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { collections } from "@/lib/data/products";
 import { staggerContainerVariants, fadeUpVariants } from "@/lib/hooks/useScrollReveal";
@@ -44,9 +45,11 @@ export default function CollectionsPage() {
             <motion.div key={col.id} variants={fadeUpVariants}>
               <Link href={`/collections/${col.id}`} className="group block relative overflow-hidden rounded-2xl luxury-card">
                 <div className={`relative overflow-hidden ${i === 0 ? "aspect-[4/3]" : "aspect-[16/9]"}`}>
-                  <img
+                  <Image
                     src={col.image}
                     alt={col.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-obsidian/30 to-transparent" />

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Check, CreditCard, Lock, ChevronDown, ChevronUp, ShoppingBag } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -353,7 +354,15 @@ export default function CheckoutPage() {
                   <div className="space-y-4 mb-8">
                     {items.map((item) => (
                       <div key={item.product.id} className="flex gap-4 glass border border-gold/10 rounded-xl p-4">
-                        <img src={item.product.images[0]} alt={item.product.name} className="w-16 h-16 rounded-lg object-cover" />
+                        <div className="relative w-16 h-16 rounded-lg overflow-hidden">
+                          <Image
+                            src={item.product.images[0]}
+                            alt={item.product.name}
+                            fill
+                            sizes="64px"
+                            className="object-cover"
+                          />
+                        </div>
                         <div className="flex-1 min-w-0">
                           <p className="font-serif text-lg text-ivory">{item.product.name}</p>
                           <div className="flex items-center justify-between mt-1 gap-3">

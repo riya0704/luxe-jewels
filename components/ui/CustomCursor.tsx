@@ -9,7 +9,6 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
  * Creates a cinematic, handcrafted interaction experience.
  */
 export function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +77,7 @@ export function CustomCursor() {
     const addHoverListeners = () => {
       // Links and buttons
       document.querySelectorAll("a, button, [role='button']").forEach((el) => {
-        el.addEventListener("mouseenter", (e) => {
+        el.addEventListener("mouseenter", () => {
           setIsHovering(true);
           const text = (el as HTMLElement).getAttribute("data-cursor") || "Click";
           setCursorLabel(text);
@@ -91,7 +90,7 @@ export function CustomCursor() {
 
       // Product cards - 3D tilt effect
       document.querySelectorAll(".product-card").forEach((el) => {
-        el.addEventListener("mouseenter", (e) => {
+        el.addEventListener("mouseenter", () => {
           setIsHovering(true);
           setCursorLabel("View");
         });
